@@ -46,7 +46,7 @@ ax.legend([r'$x=99.9046\;\;y=1\exp(-10)$'],loc=2)
 ax2 = mpl_il.inset_axes(plt.gca(), width='50%', height='60%', loc=7)
 ax2.scatter(df.x1,df.y1,color='b',marker='.',s=1)
 ax2.grid(color='k', linestyle='-', linewidth=0.1,alpha=0.2)
-ax2.set_title(r'Closes Look')
+ax2.set_title(r'Closer Look')
 ax2.margins(x=0.5)
 # To Show
 #plt.tight_layout(0.2)
