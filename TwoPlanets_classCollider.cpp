@@ -115,15 +115,16 @@ int main(void){
   double r=100, m0=10, m1=1;
   double R0=10.0, R1=5.0;
   double M=m1+m0, Mu=(m0*m1)/M; 
-  double x0=-m1*r/M, x1=r+x0; // Posicion desde centro de masa en r=0
-
+  double x0=-m1*r/M, x1=r+x0;
   double omega=sqrt(G*M*pow(r,-3.0)), T= 2*M_PI/omega;
   double V0=omega*x0, V1=omega*x1;
+
+  double xrotado, yrotado,theta ;
 
   double t,tdibujo,tmax=3.3*T,tcuadro=T/100,dt=0.01;
 
   //Dibujar
-  InicieAnimacion();
+  // InicieAnimacion();
 
   //---------------(x0,y0,Vx0,Vy0,m0,r)
   Planeta[0].Inicie(x0, 0, 0,V0, m0,R0);
@@ -133,11 +134,17 @@ int main(void){
     
     if(tdibujo>tcuadro){
       
-      InicieCuadro();
-      for(int k=0; k<N; k++) Planeta[k].Dibujese();
-      TermineCuadro();
-      
-      // cout<<Planeta[0].Getx()<<" "<<Planeta[0].Gety()<<" "<<Planeta[1].Getx()<<" "<<Planeta[1].Gety()<<endl;
+      // InicieCuadro();
+      // for(int k=0; k<N; k++) Planeta[k].Dibujese();
+      // TermineCuadro();
+      //cout<<Planeta[0].Getx()<<" "<<Planeta[0].Gety()<<" "<<Planeta[1].Getx()<<" "<<Planeta[1].Gety()<<endl;
+
+      // Coordanates that move with vel. omega
+      theta=omega*t;
+      xrotado= Planeta[1].Getx()*cos(theta)+Planeta[1].Gety()*sin(theta);
+      yrotado=-Planeta[1].Getx()*sin(theta)+Planeta[1].Gety()*cos(theta);
+      cout<<xrotado<<" "<<yrotado<<endl;
+
       tdibujo=0;
     }
     // PEFRL algoritmo
