@@ -96,8 +96,8 @@ void InicieAnimacion(void){
   cout<<"set terminal gif animate"<<endl; 
   cout<<"set output 'a.gif'"<<endl;
   cout<<"unset key"<<endl;
-  cout<<"set xrange[-120:120]"<<endl;
-  cout<<"set yrange[-120:120]"<<endl;
+  cout<<"set xrange[-1050:1050]"<<endl;
+  cout<<"set yrange[-1050:1050]"<<endl;
   cout<<"set size ratio -1"<<endl;
   cout<<"set parametric"<<endl;
   cout<<"set trange [0:7]"<<endl;
@@ -117,7 +117,7 @@ int main(void){
   Cuerpo Planeta[N];
   Colisionador Newton; 
 
-  double r=100, m0=1047, m1=1;
+  double r=1000, m0=1047, m1=1;
   double R1=2.0, R0=10.0*R1;
   double M=m1+m0, Mu=(m0*m1)/M; 
   double x0=-m1*r/M, x1=r+x0;
@@ -125,10 +125,10 @@ int main(void){
   double V0=omega*x0, V1=omega*x1;
 
   double t,tdibujo,tcuadro=T/100,dt=0.01;
-  double tmax=20.2*T;
+  double tmax=20.3*T;
 
   //Dibujar
-  InicieAnimacion();
+  // InicieAnimacion();
 
   //---------------(x0,y0,Vx0,Vy0,m0,r)
   Planeta[0].Inicie(x0, 0, 0,V0, m0,R0);
@@ -138,10 +138,10 @@ int main(void){
     
     if(tdibujo>tcuadro){
       
-      InicieCuadro();
-      for(int k=0; k<N; k++) Planeta[k].Dibujese();
-      TermineCuadro();
-      // cout<<Planeta[0].Getx()<<" "<<Planeta[0].Gety()<<" "<<Planeta[1].Getx()<<" "<<Planeta[1].Gety()<<endl;
+      // InicieCuadro();
+      // for(int k=0; k<N; k++) Planeta[k].Dibujese();
+      // TermineCuadro();
+      cout<<Planeta[0].Getx()<<" "<<Planeta[0].Gety()<<" "<<Planeta[1].Getx()<<" "<<Planeta[1].Gety()<<endl;
 
       tdibujo=0;
     }
