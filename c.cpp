@@ -127,7 +127,7 @@ int main(void){
 
   double r=1000, m0=1047, m1=1, m2=0.005;
   double R1=2.0, R0=10.0*R1, R2=R1/2;
-  double M=m1+m0, Mu=(m0*m1)/M; 
+  double M=m0+m1+m2 ; 
 
   double x0=-m1*r/M, x1=r+x0;
   double x2=x1*cos(60*M_PI/180), y2=x1*sin(60*M_PI/180);
@@ -139,8 +139,8 @@ int main(void){
   double xrot, yrot, theta;
   double xrot2, yrot2;
 
-  double t,tdibujo,tcuadro=T/100,dt=0.01;
-  double tmax=3.3*T;
+  double t,tdibujo,tcuadro=T/10,dt=0.01;
+  double tmax=20.3*T;
 
   //Dibujar
   // InicieAnimacion();
@@ -163,7 +163,8 @@ int main(void){
     yrot = -Planeta[1].Getx()*sin(theta)+Planeta[1].Gety()*cos(theta);
     xrot2 =  Planeta[2].Getx()*cos(theta)+Planeta[2].Gety()*sin(theta);
     yrot2 = -Planeta[2].Getx()*sin(theta)+Planeta[2].Gety()*cos(theta);
-    cout<<xrot<<" "<<yrot<<" "<<xrot2<<" "<<yrot2<<" "<<Planeta[1].Getx()<<" "<<Planeta[1].Gety()<<" "<<Planeta[2].Getx()<<" "<<Planeta[2].Gety()<<endl ;
+    cout<<xrot2<<" "<<yrot2<<" "<<Planeta[2].Getx()<<" "<<Planeta[2].Gety()<<endl;
+    // cout<<xrot<<" "<<yrot<<" "<<xrot2<<" "<<yrot2<<" "<<Planeta[1].Getx()<<" "<<Planeta[1].Gety()<<" "<<Planeta[2].Getx()<<" "<<Planeta[2].Gety()<<endl ;
 
     tdibujo=0;
     }

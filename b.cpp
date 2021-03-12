@@ -127,7 +127,7 @@ int main(void){
   double omega=sqrt(G*M*pow(r,-3.0)), T= 2*M_PI/omega;
   double V0=omega*x0, V1=omega*x1;
 
-  double xrot, yrot, theta;
+  double xrot, yrot, xrot0, yrot0, theta;
 
   double t,tdibujo,tcuadro=T/100,dt=0.01;
   double tmax=20.2*T;
@@ -150,7 +150,9 @@ int main(void){
     theta=omega*t ;
     xrot =  Planeta[1].Getx()*cos(theta)+Planeta[1].Gety()*sin(theta);
     yrot = -Planeta[1].Getx()*sin(theta)+Planeta[1].Gety()*cos(theta);
-    cout<<xrot<<" "<<yrot<<endl ;
+    xrot0 =  Planeta[0].Getx()*cos(theta)+Planeta[0].Gety()*sin(theta);
+    yrot0 = -Planeta[0].Getx()*sin(theta)+Planeta[0].Gety()*cos(theta);
+    cout<<xrot<<" "<<yrot<<" "<<xrot0<<" "<<yrot0<<endl ;
 
     tdibujo=0;
     }
