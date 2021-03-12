@@ -17,6 +17,8 @@ for col in df1.columns[:]:
     df1[col]=pd.to_numeric(df1[col],errors='coerce')
 
 
+bbox_args = dict(boxstyle="round", fc="0.8")
+
 fig = plt.figure()
 ax = plt.gca()
 plt.plot(df1.x1,df1.y1,color='k',lw=0.2)
@@ -26,6 +28,7 @@ plt.title(r'Jupyter Orbit around the sun')
 plt.xlabel(r'$x$ coordinates')
 plt.ylabel(r'$y$ coordinates')
 ax.legend(['Jupyter Orbit',r'Sun'],loc=0)
+ax.annotate(r'20 Orbits, dt=0.01',xy=(-940,940),bbox=bbox_args)
 plt.tight_layout(0.5)
 #plt.show()
 plt.savefig("a.pdf")

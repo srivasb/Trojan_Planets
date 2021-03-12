@@ -97,10 +97,10 @@ void Cuerpo::Dibujese(void){
 }
 void InicieAnimacion(void){
   cout<<"set terminal gif animate"<<endl; 
-  cout<<"set output 'a.gif'"<<endl;
+  cout<<"set output 'b.gif'"<<endl;
   cout<<"unset key"<<endl;
-  cout<<"set xrange[-120:120]"<<endl;
-  cout<<"set yrange[-120:120]"<<endl;
+  cout<<"set xrange[-1050:1050]"<<endl;
+  cout<<"set yrange[-1050:1050]"<<endl;
   cout<<"set size ratio -1"<<endl;
   cout<<"set parametric"<<endl;
   cout<<"set trange [0:7]"<<endl;
@@ -120,7 +120,7 @@ int main(void){
   Cuerpo Planeta[N];
   Colisionador Newton; 
 
-  double r=100, m0=1047, m1=1;
+  double r=1000, m0=1047, m1=1;
   double R1=2.0, R0=10.0*R1;
   double M=m1+m0, Mu=(m0*m1)/M; 
   double x0=-m1*r/M, x1=r+x0;
